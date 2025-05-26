@@ -1,2 +1,35 @@
 # TCP SYN scan on local network
+open prts found 
+21/tcp   open     ftp
+53/tcp   open     domain
+80/tcp   open     http
+443/tcp  open     https
+1119/tcp open     bnetgame
+
+21/tcp - FTP (File Transfer Protocol)
+Used to transfer files.
+Risk: FTP transmits data (including passwords) in plain text, so it’s vulnerable to eavesdropping and credential theft.
+Consequence: Attackers can capture login info or upload malicious files if access isn’t secured.
+
+53/tcp - DNS (Domain Name System)
+Resolves domain names to IPs.
+Risk: Open DNS servers can be abused for DNS amplification attacks (a type of DDoS).
+Consequence: Can be used as a tool for attacks or leak internal info.
+
+80/tcp - HTTP (Web Server)
+What it is: Standard unencrypted web traffic.
+Risk: If misconfigured, vulnerable to web attacks (XSS, SQL injection, etc.).
+Consequence: Attackers can exploit vulnerabilities to compromise the server.
+
+
+443/tcp - HTTPS (Secure Web Traffic)
+Secure web server (encrypted).
+Risk: Usually safer than HTTP but vulnerable if SSL/TLS config is weak.
+Consequence: Sensitive data could be intercepted if misconfigured.
+
+
+1119/tcp - Bnetgame
+Blizzard game service port.
+Risk: Typically used for gaming, less commonly targeted but could expose system info.
+Consequence: Possible exploitation if service has vulnerabilities.
 
